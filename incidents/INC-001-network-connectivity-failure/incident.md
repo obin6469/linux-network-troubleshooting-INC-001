@@ -10,7 +10,7 @@ The user reports that the machine cannot reach external resources.
 
 - Operating System: Linux
 - Number of machines: 1
-- Network interface: [interface name]
+- Network interface: enp0s3
 - Network manager: [NetworkManager/systemd-networkd/etc.]
 
 ## Symptoms
@@ -33,15 +33,24 @@ Use only the following tools:
 - tcpdump
 
 ## Investigation
+ip -br link
+ip -br addr
+ip route
+ip neigh 
 
-Document every command executed and explain why it was used.
+<img width="582" height="141" alt="net 01" src="https://github.com/user-attachments/assets/56e2113c-e5f4-4b62-b362-35dccada0ac9" />
+
 
 ## Root Cause
 
-[To be completed after investigation]
+-The network interface was administratively down.
 
 ## Resolution
 
-[To be completed after investigation]
+-The interface was brought back up.
+
+ip link set enp0s3 up 
 
 ## Verification
+
+<img width="788" height="445" alt="net 02" src="https://github.com/user-attachments/assets/8a48f838-fd9d-4749-82e2-8c0ce47ae93c" />
